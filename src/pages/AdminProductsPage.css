@@ -1,0 +1,56 @@
+.admin-toolbar-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.toolbar-search {
+  flex-grow: 1;
+  max-width: 420px;
+}
+
+.toolbar-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.toolbar-select {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+  cursor: pointer;
+}
+
+.toolbar-select:focus {
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .admin-toolbar-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .toolbar-search {
+    max-width: 100%;
+  }
+  .toolbar-filters {
+    width: 100%;
+  }
+  .toolbar-select {
+    flex-grow: 1;
+  }
+}
+
