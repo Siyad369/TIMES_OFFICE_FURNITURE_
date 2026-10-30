@@ -2,19 +2,22 @@
   display: flex;
   flex-direction: column;
   background-color: var(--bg-page);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Hero */
 .welcome-hero {
-  padding: 5rem 0 4rem;
+  padding: 4.5rem 0 3.5rem;
   background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
   border-bottom: 1px solid var(--border-subtle);
+  width: 100%;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -29,7 +32,7 @@
   border-radius: var(--radius-full);
   font-size: 0.825rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero-tag-icon {
@@ -37,7 +40,7 @@
 }
 
 .hero-title {
-  font-size: 3.25rem;
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
   font-weight: 800;
   line-height: 1.15;
   color: var(--color-primary);
@@ -52,18 +55,18 @@
 }
 
 .hero-subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
   line-height: 1.6;
   color: var(--text-muted);
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
   max-width: 580px;
 }
 
 .hero-action-buttons {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
@@ -74,7 +77,7 @@
 .hero-guarantees {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
   padding-top: 1rem;
   border-top: 1px solid var(--border-subtle);
@@ -96,6 +99,7 @@
 /* Visual Card */
 .hero-visual-card {
   position: relative;
+  width: 100%;
 }
 
 .visual-image-wrapper {
@@ -104,11 +108,12 @@
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   border: 4px solid #ffffff;
+  width: 100%;
 }
 
 .hero-primary-img {
   width: 100%;
-  height: 480px;
+  height: 440px;
   object-fit: cover;
   display: block;
 }
@@ -118,23 +123,24 @@
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-radius: var(--radius-md);
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 0.95rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   box-shadow: var(--shadow-lg);
   border: 1px solid rgba(255, 255, 255, 0.8);
   z-index: 2;
+  max-width: calc(100% - 2rem);
 }
 
 .top-badge {
-  top: 1.5rem;
-  left: -1.5rem;
+  top: 1.25rem;
+  left: -1rem;
 }
 
 .bottom-badge {
-  bottom: 1.5rem;
-  right: -1.5rem;
+  bottom: 1.25rem;
+  right: -1rem;
 }
 
 .hero-floating-badge .badge-icon {
@@ -143,27 +149,28 @@
 
 .badge-title {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 700;
   color: var(--text-main);
 }
 
 .badge-sub {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
 }
 
 /* Features */
 .welcome-features {
-  padding: 5rem 0;
+  padding: 4rem 0;
   background-color: var(--bg-surface);
+  width: 100%;
 }
 
 .section-header-centered {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 2.75rem;
 }
 
 .section-label {
@@ -177,15 +184,15 @@
 }
 
 .section-heading {
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
   color: var(--color-primary);
-  margin-bottom: 0.875rem;
+  margin-bottom: 0.75rem;
   letter-spacing: -0.01em;
 }
 
 .section-desc {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -193,11 +200,11 @@
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .feature-card {
-  padding: 2.25rem;
+  padding: 1.75rem;
   border-radius: var(--radius-lg);
   background-color: var(--bg-page);
   border: 1px solid var(--border-subtle);
@@ -211,8 +218,8 @@
 }
 
 .feature-icon-box {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-md);
   background-color: var(--color-primary-light);
   color: var(--color-primary);
@@ -223,27 +230,28 @@
 }
 
 .feature-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.5rem;
 }
 
 .feature-text {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.55;
 }
 
 /* CTA */
 .welcome-cta {
-  padding: 2rem 0 5rem;
+  padding: 1.5rem 0 4rem;
+  width: 100%;
 }
 
 .cta-banner-box {
   background: linear-gradient(135deg, var(--color-primary) 0%, #1e1b4b 100%);
   border-radius: var(--radius-xl);
-  padding: 3.5rem 3rem;
+  padding: 3rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -253,66 +261,82 @@
   overflow: hidden;
 }
 
-.cta-banner-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(217, 119, 6, 0.2) 0%, transparent 70%);
-  pointer-events: none;
-}
-
 .cta-title {
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .cta-sub {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #cbd5e1;
   max-width: 540px;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .hero-title {
-    font-size: 2.75rem;
+    gap: 2.75rem;
   }
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
   .top-badge {
-    left: 1rem;
+    left: 0.75rem;
+    top: 0.75rem;
   }
   .bottom-badge {
-    right: 1rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .welcome-hero {
-    padding: 3rem 0;
+    padding: 2.5rem 0 2rem;
   }
-  .hero-title {
-    font-size: 2.2rem;
+  .hero-primary-img {
+    height: 280px;
   }
-  .cta-banner-box {
-    flex-direction: column;
-    text-align: center;
-    padding: 2.5rem 1.5rem;
+  .hero-floating-badge {
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
+  .badge-title {
+    font-size: 0.75rem;
+  }
+  .badge-sub {
+    font-size: 0.65rem;
   }
   .hero-action-buttons {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+  }
+  .hero-action-buttons .btn {
+    width: 100%;
+  }
+  .hero-guarantees {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .cta-banner-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+  .cta-actions {
+    width: 100%;
+  }
+  .cta-actions .btn {
+    width: 100%;
+  }
+  .welcome-features {
+    padding: 2.5rem 0;
   }
 }
-
