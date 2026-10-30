@@ -3,14 +3,16 @@
   color: #94a3b8;
   margin-top: auto;
   border-top: 1px solid #1e293b;
+  width: 100%;
 }
 
 .footer-content {
-  padding-top: 4rem;
-  padding-bottom: 3.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
   display: grid;
   grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
   gap: 3rem;
+  width: 100%;
 }
 
 .brand-col .footer-brand {
@@ -92,9 +94,31 @@
   margin-top: 0.15rem;
 }
 
+.whatsapp-icon {
+  color: #22c55e !important;
+}
+
+.contact-highlight-link {
+  color: #ffffff;
+  font-weight: 700;
+  transition: color var(--transition-fast);
+}
+
+.contact-highlight-link:hover {
+  color: var(--color-accent-gold);
+}
+
+.mobile-showroom-brand {
+  display: none;
+}
+
+.mobile-showroom-tagline {
+  display: none;
+}
+
 .footer-bottom {
   border-top: 1px solid #1e293b;
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
   background-color: #070a12;
 }
 
@@ -103,7 +127,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .copyright-text {
@@ -118,21 +142,74 @@
 
 @media (max-width: 1024px) {
   .footer-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+    gap: 2rem;
   }
 }
 
-@media (max-width: 640px) {
+/* ========================================================
+   MOBILE ONLY: Show showroom & inquiries only!
+   Hide brand, navigation, and category columns.
+   ======================================================== */
+@media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-top: 2.5rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
+    gap: 0;
   }
+
+  /* Hide all other columns on mobile */
+  .brand-col,
+  .nav-col,
+  .categories-col {
+    display: none !important;
+  }
+
+  /* Exclusively display and highlight the Contact / Showroom section */
+  .contact-col {
+    display: flex;
+    flex-direction: column;
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .mobile-showroom-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1e293b;
+  }
+
+  .mobile-showroom-tagline {
+    display: block;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .contact-list {
+    gap: 1rem;
+  }
+
+  .contact-list li {
+    font-size: 0.9rem;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    padding: 1rem 0;
+  }
+
   .footer-bottom-inner {
     flex-direction: column;
     text-align: center;
+    gap: 0.35rem;
   }
 }
-

@@ -35,7 +35,14 @@ export const EditProductPage = () => {
       } catch (err) {
         console.error('Failed to load product for editing:', err);
         if (isMounted) {
-          setError('Product not found or failed to load.');
+          if (err.response?.status === 404) {
+            navigate('/admin/products', { replace: true });
+            return;
+          }
+          setError('Product not found or failed to load. Returning to products...');
+          setTimeout(() => {
+            navigate('/admin/products', { replace: true });
+          }, 1500);
         }
       } finally {
         if (isMounted) setIsLoading(false);

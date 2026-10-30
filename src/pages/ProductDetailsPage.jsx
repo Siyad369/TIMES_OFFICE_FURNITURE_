@@ -40,10 +40,14 @@ export const ProductDetailsPage = () => {
         console.error('Failed to fetch product details:', err);
         if (isMounted) {
           if (err.response?.status === 404) {
-            setError('This furniture product could not be found. It may have been removed or deactivated.');
-          } else {
-            setError('Failed to load product details. Please check your network and try again.');
+            // If 404 Not Found, automatically redirect to home page
+            navigate('/', { replace: true });
+            return;
           }
+          setError('Failed to load product details. Returning to home...');
+          setTimeout(() => {
+            navigate('/', { replace: true });
+          }, 1500);
         }
       } finally {
         if (isMounted) setIsLoading(false);
